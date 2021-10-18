@@ -1,0 +1,25 @@
+{
+    "name": "keyscript",
+    "displayName": "KeyScript",
+    "description": "Hotkeys for noone.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.61.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "keyscript",
+            "aliases": ["Keyscript", "keyscript"],
+            "extensions": [".keyscript"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "keyscript",
+            "scopeName": "source.keyscript",
+            "path": "./syntaxes/keyscript.tmLanguage.json"
+        }]
+    }
+}
