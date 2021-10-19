@@ -1,0 +1,15 @@
+// Comment
+/*
+Multi-Line Comment
+*/
+function MyFunction() {
+
+}
+int myInt = 123;
+array myArray = [1,2,3];
+string myString = "Hello World!";
+command main {
+    run {
+        print(myString)
+    }
+}
