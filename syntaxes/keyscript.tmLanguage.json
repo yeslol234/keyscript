@@ -7,13 +7,28 @@
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#main"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.keyscript",
-				"match": "\\b(if|while|for|return)\\b"
+				"match": "\\b(if|while|for|return|run|stop|get|import|export)\\b"
 			}]
 		},
 		"strings": {
@@ -26,7 +41,48 @@
 					"match": "\\\\."
 				}
 			]
-		}
+		},
+		"numbers": {
+			"name":"constant.numeric.keyscript",
+			"match": "\\b\\d+(\\.\\d+)?"
+		},
+		"comments": {
+			"patterns": [
+			  {
+				"comment": "Block comments",
+				"begin": "/\\*",
+				"end": "\\*/",
+				"captures": [{"name": "punctuation.definition.comment"}],
+				"name": "comment.block"
+			  },
+			  {
+				"comment": "Line comments",
+				"begin": "//",
+				"beginCaptures": [{"name": "punctuation.definition.comment"}],
+				"end": "$",
+				"name": "comment.line.double-slash"
+			  }
+			]
+		  },
+		  "functions": {
+			"comment": "Functions",
+			"match": "\\b[a-zA-Z_]\\w*(?=\\s*\\()",
+			"name": "support.function"
+		  },
+		  "types": {
+			  "comment": "Types",
+			  "match": "\\b(int|double|float|byte|short|long|auto|function|array|string)\\b",
+			  "name": "storage.type"
+		  },
+		  "main": {
+			  "patterns": [
+				  {
+					  "comment": "Describes command",
+					  "match": "command",
+					  "name": "storage.info"
+				  }
+			  ]
+		  }
 	},
 	"scopeName": "source.keyscript"
 }
